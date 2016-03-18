@@ -1,6 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+require 'amazon/ecs'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -28,5 +29,6 @@ module Monolist
       g.helper false
       g.test_framework false
     end
+    
   end
 end
