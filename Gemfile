@@ -31,6 +31,10 @@ gem 'bootstrap-sass'
 # https://github.com/jugend/amazon-ecs
 gem 'amazon-ecs'
 
+gem 'carrierwave'
+#gem 'rmagick', '2.15.4'
+ gem 'mini_magick'
+
 
 # Use Unicorn as the app server
 # gem 'unicorn'

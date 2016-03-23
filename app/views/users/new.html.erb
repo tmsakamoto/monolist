@@ -1,7 +1,7 @@
 <div class="box">
   <h2 class="box-title">会員登録</h2>
   <div class="box-inner">
-    <%= form_for(@user) do |f| %>
+    <%= form_for(@user, :html => {:multipart => true}) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       <div class="form-group">
         <%= f.text_field :name, class: "form-control", placeholder: "お名前" %>
@@ -14,6 +14,11 @@
       </div>
       <div class="form-group">
         <%= f.password_field :password_confirmation, class: "form-control", placeholder: "パスワード（確認）" %>
+      </div>
+      <div class="form-group">
+        <%= image_tag @user.image.thumb.url if @user.image? %>
+        <%= f.file_field :image, class: "form-control" %>
+        <%= f.hidden_field :image_cache %>
       </div>
       <div class="submit-group">
         <%= f.submit "登録する", class: "btn btn-success" %>
